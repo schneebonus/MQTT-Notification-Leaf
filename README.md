@@ -36,3 +36,10 @@ It is possible to add modes in mqtt_leaf.ino by adding a new uint32_t mapping to
 ### Node-RED integration
 
 ![nodered example](https://github.com/schneebonus/MQTT-Notification-Leaf/blob/main/nodered_example.png?raw=true)
+
+### Credits
+
+- https://github.com/kitesurfer1404/WS2812FX
+- https://arduinojson.org/
+- https://stackoverflow.com/questions/16844728/converting-from-string-to-enum-in-c
+- thingiverse fpr stl
