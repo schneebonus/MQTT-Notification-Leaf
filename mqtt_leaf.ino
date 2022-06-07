@@ -181,6 +181,7 @@ const static struct {
     {PINK, "PINK"},
     {GRAY, "GRAY"},
     {ULTRAWHITE, "ULTRAWHITE"},
+    {(uint32_t)0x8B4513, "BROWN"},
   };
 
 uint32_t str2color (const char *str)
