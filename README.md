@@ -11,7 +11,11 @@
 
 #### Add color
 
+![predefined colors](https://github.com/schneebonus/MQTT-Notification-Leaf/blob/main/mode_color.png?raw=true
+
 #### Add mode
+
+![predefined modes](https://github.com/schneebonus/MQTT-Notification-Leaf/blob/main/mode_enum.png?raw=true)
 
 ### Node-RED integration
 
