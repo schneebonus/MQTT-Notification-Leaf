@@ -5,6 +5,12 @@
 
 ### Requirenments
 
+- ESP8266 board definition ( https://arduino-esp8266.readthedocs.io/en/latest/installing.html )
+- PubSubClient.h ( https://pubsubclient.knolleary.net/ )
+- ESP8266WiFi.h ( https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi )
+- Ticker.h ( https://github.com/esp8266/Arduino/tree/master/libraries/Ticker )
+- WS2812FX.h (https://github.com/kitesurfer1404/WS2812FX)
+
 ### Install
 
 ### Customization
