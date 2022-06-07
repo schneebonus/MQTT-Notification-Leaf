@@ -11,7 +11,7 @@
 
 #### Add color
 
-![predefined colors](https://github.com/schneebonus/MQTT-Notification-Leaf/blob/main/mode_color.png?raw=true
+![predefined colors](https://github.com/schneebonus/MQTT-Notification-Leaf/blob/main/color_enum.png?raw=true)
 
 #### Add mode
 
