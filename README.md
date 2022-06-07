@@ -42,4 +42,5 @@ It is possible to add modes in mqtt_leaf.ino by adding a new uint32_t mapping to
 - https://github.com/kitesurfer1404/WS2812FX
 - https://arduinojson.org/
 - https://stackoverflow.com/questions/16844728/converting-from-string-to-enum-in-c
-- thingiverse fpr stl
+- https://www.thingiverse.com/thing:3307019
+- https://www.thingiverse.com/thing:3230905
