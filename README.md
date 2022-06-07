@@ -13,6 +13,12 @@
 
 ### Install
 
+- Download mqtt_leaf.ino
+- Set wifi settings (ssid and passsword)
+- Set mqtt settings (mqttServer, mqttPort, mqttUser, mqttPassword)
+- Set LED_COUNT and LED_PIN
+- Deploy to your esp8266
+
 ### Customization
 
 #### Add color
