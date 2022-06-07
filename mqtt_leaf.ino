@@ -4,10 +4,10 @@
 #include <Ticker.h>
 #include <ArduinoJson.h>
 
-#define DEBUGGING     true
+#define DEBUGGING     false
 #define LED_COUNT     6
 #define LED_PIN       2
-#define DEVICE_ID    1
+#define DEVICE_ID     1
 
 const char* ssid = "";          # ToDo
 const char* password = "";      # ToDo
