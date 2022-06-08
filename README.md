@@ -1,5 +1,7 @@
 # MQTT-Notification-Leaf
 
+Firmware to control a notification leaf over MQTT. Each LED can be controlled separately.
+
 ![notification leaf](https://github.com/schneebonus/MQTT-Notification-Leaf/blob/main/leaf1.jpeg?raw=true)
 
 
