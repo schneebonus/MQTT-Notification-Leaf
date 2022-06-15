@@ -37,7 +37,7 @@ It is possible to add modes in mqtt_leaf.ino by adding a new uint32_t mapping to
 
 ### Node-RED integration
 
-![nodered example](https://github.com/schneebonus/MQTT-Notification-Leaf/blob/main/nodered_example.png?raw=true)
+![nodered example](https://github.com/schneebonus/MQTT-Notification-Leaf/blob/main/nodered_leaf_example.png?raw=true)
 
 ### Credits
 
