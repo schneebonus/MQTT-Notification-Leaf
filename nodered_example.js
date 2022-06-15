@@ -1,18 +1,15 @@
-/*
-Set first led to red breathing.
-*/
-id = 0;
+p = 0;
+
+global.get("humidity") > 60? color = "BLUE" : color = "BLACK";
 
 segment = {
-    index: id,                   // segment index
-    start: id,                   // first led
-    stop:  id,                   // last led
-    mode: "FX_MODE_BREATH",     // led mode
-    color: "RED",               // led color
+    panel: p,                   // panel index
+    mode: "FX_MODE_STATIC",     // led mode
+    color: color,               // led color
     speed: 1000,                // mode speed
     reverse: false,             // reverse mode
 }
 
 msg.payload = segment;
-msg.topic = "notification/pattern";
+msg.topic = "notification/leaf";
 return msg;
