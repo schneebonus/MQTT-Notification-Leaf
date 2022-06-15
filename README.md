@@ -21,6 +21,21 @@ Firmware to control a notification leaf over MQTT. Each leaf can be controlled s
 - Set LED_COUNT and LED_PIN
 - Deploy to your esp8266
 
+### Control
+
+- notification/on         -> turn on leafs (if colors are set)
+- notification/off        -> turn off leafs
+- notification/reset      -> reset leafs to default color (default is BLACK)
+- notification/brightness -> payload 0-100 to set brightness
+- notification/leaf       -> set leaf by sending a json containing:
+  {
+    panel: int leaf number,
+    mode: MODE from conversion_mode list,
+    color: COLOR from conversion_color list,
+    speed: 1000,
+    reverse: false
+  }
+
 ### Customization
 
 #### Add color
