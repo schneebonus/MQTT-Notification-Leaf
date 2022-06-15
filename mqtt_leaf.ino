@@ -102,30 +102,32 @@ void connect_mqtt() {
 
 // callback to handle incoming mqtt events
 void callback(char* topic, byte* payload, unsigned int length) {
-  if(DEBUGGING)Serial.println(topic);
+  if(DEBUGGING)Serial.print(topic);
   // on, off, reset and brightness
   if(String(topic) == MQTT_TOPIC + "/on"){ws2812fx.start();return;}
   if(String(topic) == MQTT_TOPIC + "/off"){ws2812fx.stop();return;}
   if(String(topic) == MQTT_TOPIC + "/reset"){
-    for(int i = 0; i < LED_COUNT; i++){
-      ws2812fx.setSegment(i, i, i, FX_MODE_STATIC, {BLACK}, 1000, false);
+    for(int i = 0; i < int(LED_COUNT / 6); i++){
+      int panel_start = i * 6;
+      int panel_end = (i + 1) * 6 - 1; 
+      ws2812fx.setSegment(i, panel_start, panel_end, FX_MODE_STATIC, {BLACK}, 1000, false);
     }
     ws2812fx.start();
-    return;}
+    return;
+    }
   if(String(topic) == MQTT_TOPIC + "/brightness"){
     int brightness = int(byteToString(payload, length).c_str());
     ws2812fx.setBrightness(brightness);
     ws2812fx.start();
-    return;}
-  // complex patterns
-  if(String(topic) == MQTT_TOPIC + "/pattern"){
+    return;
+    }
+  // leaf
+  if(String(topic) == MQTT_TOPIC + "/leaf"){
     DynamicJsonDocument doc(1024);
     String json_string = byteToString(payload, length);
     deserializeJson(doc, json_string);
 
-    int index               = doc["index"];
-    int start_pos           = doc["start"];
-    int stop_pos            = doc["stop"];
+    int panel               = doc["panel"];
     String led_mode         = doc["mode"];
     uint32_t led_mode_uint  = str2mode(led_mode.c_str());
     String color            = doc["color"];
@@ -133,7 +135,15 @@ void callback(char* topic, byte* payload, unsigned int length) {
     int led_speed           = doc["speed"];
     bool led_reverse        = doc["reverse"];
 
-    ws2812fx.setSegment(index, start_pos, stop_pos, led_mode_uint, {color_uint}, led_speed, led_reverse);
+    int panel_start = panel * 6;
+    int panel_end = (panel + 1) * 6 - 1; 
+
+    if(DEBUGGING)Serial.print(" Panel: ");
+    if(DEBUGGING)Serial.print(panel);
+    if(DEBUGGING)Serial.print(" Color: ");
+    if(DEBUGGING)Serial.println(color);
+
+    ws2812fx.setSegment(panel, panel_start, panel_end, led_mode_uint, {color_uint}, led_speed, led_reverse);
     ws2812fx.start();
     return;
     }
